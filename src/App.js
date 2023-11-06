@@ -10,7 +10,7 @@ function App() {
     if (Index < res.length - 1) {
       setIndex(Index + 1);
     } else {
-      // Reset to the beginning if the end is reached
+     
       setIndex(0);
     }
     getData();
@@ -18,7 +18,7 @@ function App() {
 
   const getData = async () => {
     try {
-      const response = await axios.get('https://api.thecatapi.com/v1/images/search?limit=5'); // Increase the limit to load more images
+      const response = await axios.get('https://api.thecatapi.com/v1/images/search?limit=5'); 
       setRes(response.data);
     } catch (error) {
       console.error('Request Error:', error);
