@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PostComment from './apiTest/PostComment';
+import Comment from './apiTest/Comment';
 
 function App() {
   const [res, setRes] = useState([]);
@@ -90,15 +93,22 @@ function App() {
   }, []); 
  */} 
   return (
-    <div className="App">
-      <button onClick={handleChange}>Change</button>
-      {res.length > 0 && (
+    <BrowserRouter>
+<Routes>
+   <Route path='/post' element={<PostComment/>}/>
+   <Route path='/comments' element={<Comment/>}/>
+</Routes>
+</BrowserRouter>
+   // <div className="App">
+
+   //   <button onClick={handleChange}>Change</button>
+    //  {res.length > 0 && (
      
-        <div>
-          <img src={res[Index].url} alt="Cat" />
-        </div>
-      )}
-    </div>
+      ///  <div>
+      //    <img src={res[Index].url} alt="Cat" />
+     //   </div>
+    ////  )}
+   // </div>
   );
 }
 
