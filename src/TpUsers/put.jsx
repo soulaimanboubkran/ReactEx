@@ -25,14 +25,13 @@ export default function Put() {
     };
 
     getData();
-  }, [id]); // Add id as a dependency to useEffect
-
+  }, [id]); 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       await axios.put(`https://devowfs.onrender.com/users/${id}`, user);
-       navigate('/users')// Redirect to the users list after successful update
+       navigate('/users')
     } catch (error) {
       setError(error);
     }
