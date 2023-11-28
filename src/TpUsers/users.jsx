@@ -30,7 +30,7 @@ export default function Users() {
       await axios.delete(`https://devowfs.onrender.com/users/${userId}`);
 
       // Update the state after successful deletion
-     
+      setRes((prev) => prev.filter((res) => res._id !== userId));
     } catch (error) {
       setError(error);
     }
