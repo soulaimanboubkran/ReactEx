@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import PostComment from './apiTest/PostComment';
 import Comment from './apiTest/Comment';
+import SearchProsuct from './searchProduct/SearchProsuct';
+import SearchProd from './searchProduct/SearchProd';
+import Users from './TpUsers/users';
+import User from './TpUsers/user';
+import Put from './TpUsers/put';
 
 function App() {
-  const [res, setRes] = useState([]);
+ {/* const [res, setRes] = useState([]);
   const [Index, setIndex] = useState(0);
 
   const handleChange = () => {
@@ -30,7 +35,7 @@ function App() {
 
 
   
-  {/*
+  
   useEffect(() => {
    
   const input = [1,2,3,4,5];
@@ -94,9 +99,15 @@ function App() {
  */} 
   return (
     <BrowserRouter>
+  
 <Routes>
    <Route path='/post' element={<PostComment/>}/>
    <Route path='/comments' element={<Comment/>}/>
+   <Route path='/product' element={<SearchProsuct/>}/>
+   <Route path='/prod' element={<SearchProd/>}/>
+   <Route path='/users' element={<Users/>}/>
+   <Route path='/user' element={<User/>}/>
+   <Route path='/put/:id' element={<Put  />}/>
 </Routes>
 </BrowserRouter>
    // <div className="App">
